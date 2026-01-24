@@ -18,7 +18,7 @@ const categoryList = [
       imgUrl: 'https://img.freepik.com/free-vector/female-student-listening-webinar-online_74855-6461.jpg',
       imgAlt: "category ",
       title: "1400+ Courses",
-      cate: "TSSR provide about 1400+ courses in various displines such as Technical, Computer, Aviation, Councelling, Paramedical, and many more.",
+      cate: "TSSR provide about 1400+ courses in various displines such as Technical, Computer, Aviation, Counselling, Paramedical, and many more.",
     },
     {
       imgUrl: 'https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041847.jpg',

@@ -30,6 +30,13 @@ export const apiSevice = {
     );
     return response.data;
   },
+  verifyATC: async (data) => {
+    const response = await axiosInstance.post(
+      API_ENDPOINTS.STUDY_CENTERS.VERIFY_ATC,
+      data
+    );
+    return response.data;
+  },
   getCourses: async () => {
     const response = await axiosInstance.get(
       API_ENDPOINTS.COURSE.GET_ALL);

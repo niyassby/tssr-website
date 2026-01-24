@@ -7,6 +7,7 @@ import { CancelCircleIcon, CheckmarkCircle02Icon } from "hugeicons-react"
 
 export default function ResultCard({
   result = { },
+  student = null
 }) {
   const isPass = result?.remark?.toLowerCase() === "pass"
 
@@ -44,6 +45,9 @@ export default function ResultCard({
         </div>
       </CardHeader>
       <CardContent className="grid gap-4 md:grid-cols-2">
+        <div className="col-span-full w-full max-w-36 aspect-[3/4] border rounded-sm overflow-hidden">
+          <img className="w-full h-full object-cover" src={student?.profileImage} alt="" />
+        </div>
         <Field label="Register No" value={result?.admissionNumber} />
         <Field label="Name" value={result?.studentName} />
         <Field label="Course" value={result.courseName} colSpan />

@@ -18,12 +18,14 @@ export default function Result() {
   const [dob, setDob] = useState(null)
   const [error, setError] = useState(null)
   const [result, setResult] = useState(null)
+  const [student, setStudent] = useState(null)
   const {mutate, isPending}=useResultCheck()
 
   async function onSubmit(e) {
     e.preventDefault()
     setError(null)
     setResult(null)
+    setStudent(null)
 
     if(!admissionNo || !dob){
         toast.error("Please fill all the fields")
@@ -37,6 +39,7 @@ export default function Result() {
         onSuccess: (data) => {
           if (data?.success) {
             setResult(data?.data);
+            setStudent(data?.student);
             setError(null);
             toast.success(data.message);
           } else {
@@ -132,7 +135,7 @@ export default function Result() {
                     <CheckCircle2 className="h-4 w-4" />
                     <span className="text-sm font-medium">Record found</span>
                   </div>
-                  <ResultCard result={result} />
+                  <ResultCard student={student} result={result} />
                 </div>
               </>
             )}

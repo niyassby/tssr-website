@@ -129,8 +129,7 @@ export default function DownloadHT({setStudent}) {
 
           <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
             <p className="text-sm text-amber-800">
-              <strong>Note:</strong> Please ensure your admission number and date of birth are correct. Hall tickets are
-              available 7 days before the examination date.
+              <strong>Note:</strong> Please ensure your admission number and date of birth are correct.  If you have any issues, please contact the exam department.
             </p>
           </div>
         </CardContent>

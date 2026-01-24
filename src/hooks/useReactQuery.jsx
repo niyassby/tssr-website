@@ -39,6 +39,13 @@ export const useVerifyCertificate = () => {
       }
     });
   };
+export const useATCVerifyCertificate = () => {
+    return useMutation({
+      mutationFn: (data) => {
+        return apiSevice.verifyATC(data);
+      }
+    });
+  };
 
   export const useAllCourse = () => {
     return useQuery({

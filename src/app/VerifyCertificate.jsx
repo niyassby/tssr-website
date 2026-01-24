@@ -82,7 +82,7 @@ export default function CertificateVerification() {
         <form onSubmit={handleSubmit} className="grid gap-3">
           <div className="grid gap-2">
             <Label htmlFor="admission">Admission number</Label>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center max-md:flex-col gap-2">
               <Input
                 id="admission"
                 inputMode="text"
@@ -94,7 +94,7 @@ export default function CertificateVerification() {
                 aria-describedby="admission-help"
                 className="uppercase"
               />
-              <Button type="submit" disabled={!canSubmit || isPending} className="whitespace-nowrap">
+              <Button type="submit" disabled={!canSubmit || isPending} className="whitespace-nowrap max-md:w-full">
                 {isPending ? <Loader2 className="animate-spin" /> : <Search />}
                 Verify
               </Button>
@@ -130,12 +130,18 @@ export default function CertificateVerification() {
               </div>}
             </div>
 
-            <div className="grid gap-0 p-4 sm:grid-cols-2">
+            <div className="grid gap-x-3 p-4 sm:grid-cols-2">
+              <div className="col-span-full mb-2">
+                <div className="w-24 h-28 border rounded-2xl overflow-hidden">
+                  <img src={data?.studentId?.profileImage || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"} className="w-full h-full object-cover" alt="" />
+                </div>
+              </div>
               <Field label="Admission number" value={data.admissionNumber} />
               <Field label="Status" badge value={data.isCertificateIssued} />
               <Field label="Student Name" value={data?.studentId?.name} />
-              <Field label="Student Name" value={data?.studycenterId?.name} />
-              <Field label="Program" value={data.courseId?.name} />
+              <Field label="Center Name" value={data?.studycenterId?.name} />
+              <Field label="Grade" value={data.grade} />
+              <Field label="Course" value={data.courseId?.name} />
               <Field label="Batch" value={data.batchId?.month} />
               <Field label="Duration" value={data.courseId?.duration} />
               <Field label="Admission year" value={String(data.year)} />
@@ -170,7 +176,7 @@ function Field({ label, value, badge=false}) {
       <div className="text-sm text-muted-foreground">{label}</div>
       {badge ?
       <Badge className={cn(value ? "bg-emerald-600 text-white" : "bg-rose-600 text-white", "rounded-full min-w-20")} >{value ? "Pass" : "Fail"}</Badge>
-      :<div className={cn(" font-semibold")}>{value}</div>
+      :<div className={cn(" font-semibold uppercase")}>{value}</div>
     }
     </div>
   )

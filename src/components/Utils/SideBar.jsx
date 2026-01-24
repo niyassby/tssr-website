@@ -19,7 +19,7 @@ import {
 import { ChevronLeft, ChevronRight, Minus, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Menu02Icon } from "hugeicons-react";
-import calenderPdf from "../../assets/pdf/ACADEMIC-CALENDARS-TSSR.pdf";
+import calenderPdf from "../../assets/pdf/ACADEMIC-CALENDARS  TSSR.pdf";
 import studentAfv from "../../assets/pdf/STUDENT_AFFIDEVIT_tssr.pdf";
 import MarkList from "../../assets/pdf/mark list.pdf";
 import certificate from "../../assets/pdf/certificate.pdf";

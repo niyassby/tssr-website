@@ -78,14 +78,14 @@ function NavMenu() {
         </div>
       </div>
         <div className={`${scrolling ? "fixed top-0 bg-white shadow-sm py-5" : "py-5"} w-full transition-all duration-300`}>
-      <div className={`w-full max-w-[85rem] px-4 mx-auto  flex items-center justify-between bggray-500 `}>
+      <div className={`w-full max-w-[85rem] px-4 mx-auto  flex items-center gap-1 justify-between bggray-500 `}>
         <Link to='/'>
           <img className="w-32 md:w-48" src={logo} alt="Logo" />
         </Link>
         <Navbar />
         <div className="flex items-center gap-2">
-          <a href={url}>
-          <Button className='bg-theme-400 cursor-pointer hover:bg-theme-600 text-white' >Centre Login</Button>
+          <a href={`${url}/login`}>
+          <Button className='bg-theme-400 cursor-pointer hover:bg-theme-600 max-sm:px-2 text-white' >Study Centre Login</Button>
           </a>
           <SheetDemo/>
       

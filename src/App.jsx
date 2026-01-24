@@ -20,6 +20,7 @@ import ContactPage from "./app/ContactUsPage";
 import TSCC from "./app/TSCC";
 import Result from "./app/ResultPage";
 import CertificateVerification from "./app/VerifyCertificate";
+import CenterVerification from "./app/CenterVerification";
 
 function App() {
   useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
 
       <Route path="/hall-ticket" element={<HallTicket/>}/> 
       <Route path="/check-result" element={<Result/>}/> 
+      <Route path="/atc-verification" element={<CenterVerification/>}/> 
       <Route path="/certificate-verification" element={<CertificateVerification/>}/> 
 
       <Route path="/atc-req" element={<ATCreq/>}/> 

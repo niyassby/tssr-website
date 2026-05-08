@@ -1,4 +1,4 @@
-import {Routes, Route } from "react-router-dom";
+import {Routes, Route, Outlet } from "react-router-dom";
 import Home from '@/app/Home';
 import AboutPage from "./app/AboutPage";
 import NavMenu from "./components/Utils/NavMenu";
@@ -21,6 +21,10 @@ import TSCC from "./app/TSCC";
 import Result from "./app/ResultPage";
 import CertificateVerification from "./app/VerifyCertificate";
 import CenterVerification from "./app/CenterVerification";
+import Events from "./app/Event/Events";
+import EventDetails from "./app/Event/EventDetails";
+import EventPassword from "./app/Event/EventPassword";
+import SingeEventRec from "./app/Event/SingeEventRec";
 
 function App() {
   useEffect(() => {
@@ -52,6 +56,15 @@ function App() {
       <Route path="/check-result" element={<Result/>}/> 
       <Route path="/atc-verification" element={<CenterVerification/>}/> 
       <Route path="/certificate-verification" element={<CertificateVerification/>}/> 
+      <Route path="/events" element={<Outlet/>}>
+        <Route index element={<Events/>}/>
+        <Route path=":id" element={<EventDetails/>}/>
+      </Route>
+      <Route path="/event-verification" element={<Outlet/>}>
+        {/* <Route index element={<EventPassword/>}/> */}
+        <Route path="event/:eventId" element={<EventPassword/>}/>
+        <Route path=":id" element={<SingeEventRec/>}/>
+      </Route>
 
       <Route path="/atc-req" element={<ATCreq/>}/> 
     </Routes>

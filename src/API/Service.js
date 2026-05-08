@@ -46,4 +46,48 @@ export const apiSevice = {
     const response = await axiosInstance.get(API_ENDPOINTS.GALLERY.GET_ALL_POST );
     return response.data;
   },
+  getAllEvents: async () => {
+    const response = await axiosInstance.get(
+      API_ENDPOINTS.EVENT.GET_ALL_EVENTS,
+      {
+        params: {activeOnly: true}
+      }
+    );
+    return response.data;
+  },
+  getStudentEligibility: async (data) => {
+    const response = await axiosInstance.post(
+      API_ENDPOINTS.EVENT.GET_STUDENT,
+      data
+    );
+    return response.data;
+  },
+  registerEvent: async (data) => {
+    const response = await axiosInstance.post(
+      API_ENDPOINTS.EVENT.REGISTER_EVENT,
+      data
+    );
+    return response.data;
+  },
+  verifyEventPassword: async (data) => {
+    const response = await axiosInstance.post(
+      API_ENDPOINTS.EVENT.VERIFY_EVENT_PASSWORD,
+      data
+    );
+    return response.data;
+  },
+  updateEventRecord: async (data) => {
+    const response = await axiosInstance.post(
+      API_ENDPOINTS.EVENT.UPDATE_EVENT_RECORD,
+      data
+    );
+    return response.data;
+  },
+  getOneEventRecord: async (recordId) => {
+    const response = await axiosInstance.get(
+      API_ENDPOINTS.EVENT.GET_ONE_EVENT_RECORD,
+      {params: {recordId}}
+    );
+    return response.data;
+  },
 };

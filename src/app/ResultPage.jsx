@@ -65,7 +65,7 @@ export default function Result() {
                 Student Result Check
               </h1>
               <p className="text-sm text-muted-foreground">
-                Enter your Admission No and Date of Birth to view your examination result.
+                Enter your Register No and Date of Birth to view your examination result.
               </p>
             
           </div>
@@ -75,13 +75,13 @@ export default function Result() {
           <CardHeader className="pb-4">
             <CardTitle className="text-base md:text-lg">Find your result</CardTitle>
             <CardDescription className="text-sm">
-              Enter your admission number and date of birth to check your result.
+              Enter your register number and date of birth to check your result.
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-6">
             <form onSubmit={onSubmit} className="grid grid-cols-1 gap-4 md:grid-cols-5">
               <div className="md:col-span-3 space-y-1">
-                <Label htmlFor="admissionNo">Admission No</Label>
+                <Label htmlFor="admissionNo">Register No</Label>
                 <Input
                   id="admissionNo"
                   placeholder="e.g. RUK/A59/10235 or 102563562"

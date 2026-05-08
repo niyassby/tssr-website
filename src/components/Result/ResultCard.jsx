@@ -55,7 +55,7 @@ export default function ResultCard({
         <Field label="Exam Centre" value={result.examCenterName} />
         <Field label="Total Grade " value={result?.grade} />
         <Field label="Duration" value={result.duration} />
-        <Field label="Date" value={result.dateOfExam} />
+        <Field label="Date Of Exam" value={result.dateOfExam} />
         <div className={cn(
               "px-3 py-1 flex items-center justify-center gap-2 w-full col-span-full mt-5 rounded-md text-center font-medium text-white",
               isPass ? "bg-emerald-600 hover:bg-emerald-600 " : "bg-rose-600 hover:bg-rose-600"

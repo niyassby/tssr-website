@@ -84,9 +84,9 @@ function NavMenu() {
         </Link>
         <Navbar />
         <div className="flex items-center gap-2">
-          <a href={`${url}/login`}>
+          <Link to={`${url}/login`}>
           <Button className='bg-theme-400 cursor-pointer hover:bg-theme-600 max-sm:px-2 text-white' >Study Centre Login</Button>
-          </a>
+          </Link>
           <SheetDemo/>
       
         </div>

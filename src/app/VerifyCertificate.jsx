@@ -35,7 +35,7 @@ export default function CertificateVerification() {
       setData(null)
       const admit = normalizeAdmission(admission)
       if (!admit || admit.length < 6) {
-        setError("Please enter a valid admission number.")
+        setError("Please enter a valid register number.")
         return
       } 
       mutate({admissionNumber: admission}, {
@@ -68,7 +68,7 @@ export default function CertificateVerification() {
           Certificate Verification
           </h1>
           <p className="text-sm text-muted-foreground">
-            Enter your Admission No to view your Certificate Verification.
+            Enter your register No to view your Certificate Verification.
           </p>
         
       </div>
@@ -76,12 +76,12 @@ export default function CertificateVerification() {
     <Card className="shadow-sm">
       <CardHeader className="space-y-2">
         <CardTitle className="text-2xl">Certificate Verification</CardTitle>
-        <CardDescription>Enter a student's admission number to verify their certificate.</CardDescription>
+        <CardDescription>Enter a student's register number to verify their certificate.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <form onSubmit={handleSubmit} className="grid gap-3">
           <div className="grid gap-2">
-            <Label htmlFor="admission">Admission number</Label>
+            <Label htmlFor="admission">Register number</Label>
             <div className="flex items-center max-md:flex-col gap-2">
               <Input
                 id="admission"
@@ -136,7 +136,7 @@ export default function CertificateVerification() {
                   <img src={data?.studentId?.profileImage || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"} className="w-full h-full object-cover" alt="" />
                 </div>
               </div>
-              <Field label="Admission number" value={data.admissionNumber} />
+              <Field label="Register number" value={data.admissionNumber} />
               <Field label="Status" badge value={data.isCertificateIssued} />
               <Field label="Student Name" value={data?.studentId?.name} />
               <Field label="Center Name" value={data?.studycenterId?.name} />

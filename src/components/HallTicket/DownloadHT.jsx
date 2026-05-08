@@ -13,7 +13,7 @@ import { useDlHallTicket } from "@/hooks/useReactQuery"
 import { normalizeDobToUTC } from "../Utils/DOBConvertion"
 
 const instructions = [
-    "Enter your correct Admission Number and Date of Birth in the form.",
+    "Enter your correct Register Number and Date of Birth in the form.",
     "Double-check the details you entered to avoid any errors.",
     "Click on the 'Get Hall Ticket' button.",
     "Your hall ticket will appear below the form on the screen.",
@@ -74,7 +74,7 @@ export default function DownloadHT({setStudent}) {
           </div>
           <CardTitle className="text-2xl font-bold text-gray-900">Download Hall Ticket</CardTitle>
           <CardDescription className="text-gray-600">
-            Enter your admission details to download your hall ticket
+            Enter your register details to download your hall ticket
           </CardDescription>
         </CardHeader>
 
@@ -82,14 +82,14 @@ export default function DownloadHT({setStudent}) {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="admission-no" className="text-sm font-medium text-gray-700">
-                Admission Number *
+              Register Number *
               </Label>
               <div className="relative">
                 <IdCard className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                 <Input
                   id="admission-no"
                   type="text"
-                  placeholder="Enter your admission number"
+                  placeholder="Enter your register number"
                   value={admissionNo}
                   onChange={(e) => setAdmissionNo(e.target.value.toUpperCase())}
                   className="pl-10"
@@ -129,7 +129,7 @@ export default function DownloadHT({setStudent}) {
 
           <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
             <p className="text-sm text-amber-800">
-              <strong>Note:</strong> Please ensure your admission number and date of birth are correct.  If you have any issues, please contact the exam department.
+              <strong>Note:</strong> Please ensure your register number and date of birth are correct.  If you have any issues, please contact the exam department.
             </p>
           </div>
         </CardContent>

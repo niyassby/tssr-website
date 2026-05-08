@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { format, formatDate } from "date-fns";
 import { QRCodeSVG } from "qrcode.react";
 import sealimg from '../../assets/sealpng.png'
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import { HallTicketPDFDocument } from "./HallTicketPDFRenderer";
 const url = import.meta.env.VITE_APP_URL
 
 export const HallTicket = forwardRef(({studentData}, ref)=> {
@@ -194,14 +196,27 @@ export default function HallTicketPDF({studentData}) {
   return (
       <div className="border max-w-[220mm] mx-auto py-6 rounded-2xl flex flex-col items-center justify-center gap-3 m-2">
         <div className=" ">
-          <Button
+          {/* <Button
             onClick={handlePrint}
           >
             Print Hall Ticket
-          </Button>
+          </Button> */}
+          <PDFDownloadLink
+          document={<HallTicketPDFDocument studentData={studentData} />}
+          fileName={`HallTicket_${studentData?.registrationNo || "Download"}.pdf`}
+        >
+          {({ loading }) => (
+            <Button disabled={loading}>
+              {loading ? "Preparing PDF..." : "Download PDF"}
+            </Button>
+          )}
+        </PDFDownloadLink>
         </div>
-        <div className="bg-white w-full max-md:sr-only print:not-sr-only overflow-auto">
-          <HallTicket ref={componentRef} studentData={studentData} />
+        <div className="bg-white w-full overflow-auto">
+          {/* <HallTicket ref={componentRef} studentData={studentData} /> */}
+          <PDFViewer width="100%" height="800px" >
+          <HallTicketPDFDocument studentData={studentData} />
+        </PDFViewer>
         </div>
       </div>
   )

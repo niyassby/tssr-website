@@ -15,7 +15,17 @@ export const API_ENDPOINTS = {
   },
   GALLERY: {
     GET_ALL_POST: "/api/gallery/fetchAllGalleryPosts",
-  }
+  },
+  EVENT: {
+    GET_ALL_EVENTS: "/api/events/getAllEvents",
+    GET_STUDENT: "/api/events/checkStudentEligibility",
+    REGISTER_EVENT: "/api/events/recordEvent",
+
+    GET_EVENT_BY_ID: "/api/events/getEventById",
+    VERIFY_EVENT_PASSWORD: "/api/events/verifyPassword",
+    UPDATE_EVENT_RECORD: "/api/events/updateEventRecord",
+    GET_ONE_EVENT_RECORD: "/api/events/getSingleEventRecord",
+  },
   
 };
  

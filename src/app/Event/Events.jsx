@@ -90,7 +90,7 @@ function Events() {
                     {event.date && (
                       <div className="flex items-center gap-2">
                         <Calendar1Icon size={20} className='shrink-0' />
-                        {new Date(event.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
+                        {new Date(event.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric', timeZone: "Asia/Kolkata",})}
                         {event.time?.from && ` at ${event.time.from}`}
                       </div>
                     )}

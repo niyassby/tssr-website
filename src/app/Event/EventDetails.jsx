@@ -121,7 +121,7 @@ function EventDetails() {
                         <h2 className="text-gray-600  mb-6">{event.eventProgram}</h2>
 
                         <div className="space-y-6 mt-8">
-                            <InfoRow Icon={Calendar1Icon} label="Date" value={new Date(event.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} />
+                            <InfoRow Icon={Calendar1Icon} label="Date" value={new Date(event.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: "Asia/Kolkata", })} />
                             <InfoRow Icon={Clock1Icon} label="Time" value={`${event.time?.from} - ${event.time?.to}`} />
                             <InfoRow Icon={Location01Icon} label="Location" value={event.location} />
                         </div>

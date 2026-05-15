@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 import QRCode from 'qrcode';
 import logo from '../../assets/Logo.png';
+import { format } from 'date-fns';
 
 const url = 'https://tssrcouncil.com';
 
@@ -263,13 +264,10 @@ const EventSlip = ({ data, studentData }) => {
         }
     }, [id]);
 
-    const dateObj = event.date ? new Date(event.date) : new Date();
-    const day = dateObj.getDate().toString().padStart(2, '0');
-    const month = dateObj.toLocaleString('en-US', { month: 'long' });
-    const year = dateObj.getFullYear();
-    const dayName = dateObj.toLocaleString('en-US', { weekday: 'long' });
-
-    const formattedDate = `${dayName}, ${month} ${day}, ${year}`;
+    const dateObj = event.date ? new Date(event.date, {
+        timeZone: "Asia/Kolkata",
+      }) : new Date();
+    const formattedDate = format(dateObj, 'EEEE, MMMM dd, yyyy');
     const timeString = event.time?.from ? `${event.time.from} ${event.time.to ? '- ' + event.time.to : ''}` : 'TBA';
 
     return (

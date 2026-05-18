@@ -263,11 +263,9 @@ const EventSlip = ({ data, studentData }) => {
             generateQR();
         }
     }, [id]);
-
-    const dateObj = event.date ? new Date(event.date, {
-        timeZone: "Asia/Kolkata",
-      }) : new Date();
-    const formattedDate = format(dateObj, 'EEEE, MMMM dd, yyyy');
+    
+    const dateObj = event.date ? new Date(event.date) : new Date();
+    const formattedDate = format(new Date(dateObj), 'EEEE, MMMM dd, yyyy');
     const timeString = event.time?.from ? `${event.time.from} ${event.time.to ? '- ' + event.time.to : ''}` : 'TBA';
 
     return (

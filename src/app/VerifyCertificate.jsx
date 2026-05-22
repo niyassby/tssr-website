@@ -122,7 +122,7 @@ export default function CertificateVerification() {
             <div className="flex items-center justify-center border-b p-4">
             {data?.isCertificateIssued ?<div className="flex flex-col items-center gap-1">
                 <AnimatedCheck size={100}/>
-                <div className="font-medium">Certificate Verifide</div>
+                <div className="font-medium">Certificate Verified</div>
               </div>:
               <div className="flex flex-col items-center gap-1">
                 <AnimatedX size={100}/>

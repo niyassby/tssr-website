@@ -65,6 +65,7 @@ function EventDetails() {
 
             if (!order.success) return toast.error(order.message);
 
+            if(event?.fee > 0 ){
             const dataOrder = order?.data?.razorpayOrder;
             const options = {
                 key: import.meta.env.VITE_RAZORPAY_KEY_ID,
@@ -92,8 +93,16 @@ function EventDetails() {
                 theme: { color: "#4F46E5" } // Indigo 600
             };
 
-            const rzp = new window.Razorpay(options);
-            rzp.open();
+                const rzp = new window.Razorpay(options);
+                rzp.open();
+            }else{
+                toast.success("Registration successful");
+                setSlipData(order?.data?.externalDetails);
+                setSuccess(true);
+                // Clear entry states
+                setStudentData(null);
+                setIsExternal(false);
+            }
         } catch (error) {
             toast.error("Registration failed. Please try again.");
         }

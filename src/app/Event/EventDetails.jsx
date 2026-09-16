@@ -65,6 +65,15 @@ function EventDetails() {
 
             if (!order.success) return toast.error(order.message);
 
+            if (order.alreadyRegistered) {
+            toast.success(order.message || "You are already registered.");
+            setSlipData(order?.data?.externalDetails); // record itself, not record.externalDetails
+            setSuccess(true);
+            setStudentData(null);
+            setIsExternal(false);
+            return;
+        }
+
             if(event?.fee > 0 ){
             const dataOrder = order?.data?.razorpayOrder;
             const options = {
